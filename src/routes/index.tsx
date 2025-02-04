@@ -98,7 +98,7 @@ function Index() {
         </div>
 
         {/* Contributors Section */}
-        <div className="lg:w-1/3 lg:mt-4 mt-8">
+        <div className="lg:w-1/3 lg:mt-5 mt-8">
           <h2 className="text-2xl font-semibold  pb-2 mb-4">Contributors:</h2>
           <ul className="space-y-1 ml-5">
             {[
