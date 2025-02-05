@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import TopImage from "../../public/logo.png";
+import TopImage from "/logo.png";
 import ClassCard from "../utils/class";
 import { useEffect, useState } from "react";
 
