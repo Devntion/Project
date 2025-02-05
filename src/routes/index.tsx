@@ -1,7 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import {createFileRoute} from "@tanstack/react-router";
 import TopImage from "../../public/logo.png";
 import ClassCard from "../utils/class";
-import { useEffect, useState } from "react";
+import ClassCard2 from "../utils/class2";
+import {useEffect, useState} from "react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -24,13 +25,29 @@ function Index() {
       .then((response) => response.json())
       .then((data) => setOntologyData(data));
   }, []);
+
+  const [ontologyData2, setOntologyData2] = useState<OntologyData[]>([]);
+  useEffect(() => {
+    // Fetch the JSON data from the file
+    fetch("/data2.json")
+      .then((response) => response.json())
+      .then((data) => setOntologyData2(data));
+  }, []);
+
+  const [ontologyData3, setOntologyData3] = useState<OntologyData[]>([]);
+  useEffect(() => {
+    // Fetch the JSON data from the file
+    fetch("/data3.json")
+      .then((response) => response.json())
+      .then((data) => setOntologyData3(data));
+  }, []);
   return (
     <>
       <div className="bg-[#181818] min-h-screen p-8 font-sans text-[#EBEBEBA3]">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <header className="flex items-center justify-between border-b-2 border-white pb-4 mb-6">
-            <img src={TopImage} alt="Riskman Ontology Logo" className="h-20" />
+            <img src={TopImage} alt="Riskman Ontology Logo" className="h-20"/>
             <div className="flex-1 text-center">
               <h1 className="text-3xl font-bold text-[#EBEBEBA3]">
                 The Riskman Ontology
@@ -281,6 +298,165 @@ function Index() {
               id={item.title.toLowerCase().replace(/\s+/g, "-")} // Generate ID
             />
           ))}
+
+
+          <section className="border border-white p-4 mt-12">
+            <h2 className="text-3xl font-bold text-center mb-4">Object properties</h2>
+            <div className="flex flex-wrap gap-x-7 gap-y-0">
+              {[
+                "causes harm",
+                "has analyzed risk",
+                "has device context",
+                "has device component",
+                "has device problem",
+                "has domain specific hazard",
+                "has event",
+                "has device function",
+                "has harm",
+                "has hazard",
+                "has hazardous situation",
+                "has implementation manifest",
+                "has patient problem",
+                "has parent hazard",
+                "has parent situation",
+                "has residual risk level",
+                "has initial risk level",
+                "has risk level",
+                "Risk SDA",
+                "has preceding event",
+                "SDA",
+                "has safety assurance",
+                "has sub SDA",
+                "is mitigated by",
+                "is part of device component",
+                "has probability",
+                "has Probability1",
+                "has Probability2",
+                "has Severity",
+              ].map((classItem) => (
+                <a
+                  key={classItem}
+                  href={`#${classItem.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="text-[#00bd7e] hover:underline whitespace-nowrap"
+                >
+                  {classItem}
+                </a>
+              ))}
+            </div>
+          </section>
+          {ontologyData2.map((item, index) => (
+            <ClassCard2
+              key={index}
+              title={item.title}
+              iri={item.iri}
+              description={item.description}
+              subclassOf={item.subclassOf}
+              superclassOf={item.superclassOf}
+              domainOf={item.domainOf}
+              rangeOf={item.rangeOf}
+              id={item.title.toLowerCase().replace(/\s+/g, "-")} // Generate ID
+            />
+          ))}
+
+          <div className="border-b-2 my-12 border-white"></div>
+
+          <h2 className="text-3xl font-bold text-center mb-4">Extension of the Riskman Ontology for Security</h2>
+          <p className={"text-l font-bold text-center mb-4"}>Experimental section</p>
+
+          <div className="border-b-2 my-12 border-white"></div>
+
+
+          <div className="lg:w-1/3">
+            <h2 className="text-2xl font-semibold pb-2 mb-4">Metadata:</h2>
+            <ul className="space-y-1 ml-5">
+              <li>
+                <span className="font-bold">Documentation:</span>{" "}
+                <a
+                  href="https://w3id.org/riskman"
+                  className="text-[#00bd7e] hover:underline"
+                >
+                  https://w3id.org/riskman
+                </a>
+              </li>
+              <li>
+                <span className="font-bold">Ontology:</span>{" "}
+                <a
+                  href="https://w3id.org/riskman/ontology/security"
+                  className="text-[#00bd7e] hover:underline"
+                >
+                  https://w3id.org/riskman/ontology/security
+                </a>
+              </li>
+              <li>
+                <span className="font-bold">Shapes:</span>{" "}
+                <a
+                  href="https://w3id.org/riskman/shapes/security"
+                  className="text-[#00bd7e] hover:underline"
+                >
+                  https://w3id.org/riskman/shapes/security
+                </a>
+              </li>
+              <li>
+                <span className="font-bold">GitHub repo:</span>{" "}
+                <a
+                  href="https://w3id.org/riskman/repo"
+                  className="text-[#00bd7e] hover:underline"
+                >
+                  https://w3id.org/riskman/repo
+                </a>
+              </li>
+            </ul>
+            <div className="mt-4 text-lg text-gray-400 ml-5">
+              <p>Creation date: 2024-08-20</p>
+              <p>Modification date: 2024-11-17</p>
+            </div>
+          </div>
+
+
+          <div className="border-b-2 my-12 border-white"></div>
+
+          <h2 className="text-3xl font-bold  mb-4">Description:</h2>
+          <p className="pl-5 text-gray-300">
+            An extension of the Riskman ontology that also takes in account security aspects of medical devices.
+          </p>
+
+          <section className="border border-white p-4 mt-12">
+            <h2 className="text-3xl font-bold text-center mb-4">Classes</h2>
+            <div className="flex flex-wrap gap-x-7 gap-y-0">
+              {[
+                "Security hazard",
+                "Analyzed security risk",
+                "Controlled security risk",
+                "Justification",
+                "Risk level needing justification",
+
+              ].map((classItem) => (
+                <a
+                  key={classItem}
+                  href={`#${classItem.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="text-[#00bd7e] hover:underline whitespace-nowrap"
+                >
+                  {classItem}
+                </a>
+              ))}
+            </div>
+          </section>
+
+          {ontologyData3.map((item, index) => (
+            <ClassCard
+              key={index}
+              title={item.title}
+              iri={item.iri}
+              description={item.description}
+              subclassOf={item.subclassOf}
+              superclassOf={item.superclassOf}
+              domainOf={item.domainOf}
+              rangeOf={item.rangeOf}
+              id={item.title.toLowerCase().replace(/\s+/g, "-")} // Generate ID
+            />
+          ))}
+
+
         </div>
       </div>
     </>

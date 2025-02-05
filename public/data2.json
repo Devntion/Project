@@ -1,0 +1,171 @@
+[
+  {
+    "title": "causes harm",
+    "iri": "https://w3id.org/riskman/ontology#causesHarm",
+    "domainOf": ["Domain specific hazard"],
+    "rangeOf": ["Harm"]
+  },
+  {
+    "title": "has analyzed risk",
+    "iri": "https://w3id.org/riskman/ontology#hasAnalyzedRisk",
+    "domainOf": ["Controlled risk"],
+    "rangeOf": ["Analyzed risk"]
+  },
+  {
+    "title": "has device context",
+    "iri": "https://w3id.org/riskman/ontology#hasDeviceContext",
+    "domainOf": ["Analyzed risk"],
+    "rangeOf": ["Device context"]
+  },
+  {
+    "title": "has device component",
+    "iri": "https://w3id.org/riskman/ontology#hasDeviceComponent",
+    "domainOf": ["Domain specific hazard"],
+    "rangeOf": ["Device component"]
+  },
+  {
+    "title": "has device problem",
+    "iri": "https://w3id.org/riskman/ontology#hasDeviceProblem",
+    "domainOf": ["Domain specific hazard"],
+    "rangeOf": ["Device problem"]
+  },
+  {
+    "title": "has domain specific hazard",
+    "iri": "https://w3id.org/riskman/ontology#hasDomainSpecificHazard",
+    "domainOf": ["Analyzed risk"],
+    "rangeOf": ["Domain specific hazard"]
+  },
+  {
+    "title": "has event",
+    "iri": "https://w3id.org/riskman/ontology#hasEvent",
+    "domainOf": ["Hazardous situation"],
+    "rangeOf": ["Event"]
+  },
+  {
+    "title": "has device function",
+    "iri": "https://w3id.org/riskman/ontology#hasDeviceFunction",
+    "domainOf": ["Domain specific hazard"],
+    "rangeOf": ["Device function"]
+  },
+  {
+    "title": "has harm",
+    "iri": "https://w3id.org/riskman/ontology#hasHarm",
+    "domainOf": ["Risk"],
+    "rangeOf": ["Harm"]
+  },
+  {
+    "title": "has hazard",
+    "iri": "https://w3id.org/riskman/ontology#hasHazard",
+    "domainOf": ["Domain specific hazard"],
+    "rangeOf": ["Hazard"]
+  },
+  {
+    "title": "has hazardous situation",
+    "iri": "https://w3id.org/riskman/ontology#hasHazardousSituation",
+    "domainOf": ["Analyzed risk"],
+    "rangeOf": ["Hazardous situation"]
+  },
+  {
+    "title": "has implementation manifest",
+    "iri": "https://w3id.org/riskman/ontology#hasImplementationManifest",
+    "domainOf": ["SDA"],
+    "rangeOf": ["Implementation manifest"]
+  },
+  {
+    "title": "has patient problem",
+    "iri": "https://w3id.org/riskman/ontology#hasPatientProblem",
+    "domainOf": ["Analyzed risk"],
+    "rangeOf": ["Patient problem"]
+  },
+  {
+    "title": "has parent hazard",
+    "iri": "https://w3id.org/riskman/ontology#hasParentHazard",
+    "domainOf": ["Hazard"],
+    "rangeOf": ["Hazard"]
+  },
+  {
+    "title": "has parent situation",
+    "iri": "https://w3id.org/riskman/ontology#hasParentSituation",
+    "domainOf": ["Hazardous situation"],
+    "rangeOf": ["Hazardous situation"]
+  },
+  {
+    "title": "has residual risk level",
+    "iri": "https://w3id.org/riskman/ontology#hasResidualRiskLevel",
+    "subclassOf": ["has risk level"],
+    "domainOf": ["Controlled risk"],
+    "rangeOf": ["Risk level"]
+  },
+  {
+    "title": "has initial risk level",
+    "iri": "https://w3id.org/riskman/ontology#hasInitialRiskLevel",
+    "subclassOf": ["has risk level"],
+    "domainOf": ["Analyzed risk"],
+    "rangeOf": ["Risk level"]
+  },
+  {
+    "title": "has risk level",
+    "iri": "https://w3id.org/riskman/ontology#hasRiskLevel",
+    "subclassOf": ["has residual risk level", "has initial risk level"],
+    "domainOf": ["Risk"],
+    "rangeOf": ["Risk level"]
+  },
+  {
+    "title": "has preceding event",
+    "iri": "https://w3id.org/riskman/ontology#hasPrecedingEvent",
+    "domainOf": ["Event"],
+    "rangeOf": ["Event"]
+  },
+  {
+    "title": "has safety assurance",
+    "iri": "https://w3id.org/riskman/ontology#hasSafetyAssurance",
+    "domainOf": ["Assurance SDA"],
+    "rangeOf": ["Safety assurance"]
+  },
+  {
+    "title": "has sub SDA",
+    "iri": "https://w3id.org/riskman/ontology#hasSubSDA",
+    "domainOf": ["SDA"],
+    "rangeOf": ["SDA"]
+  },
+  {
+    "title": "is mitigated by",
+    "iri": "https://w3id.org/riskman/ontology#isMitigatedBy",
+    "domainOf": ["Controlled risk"],
+    "rangeOf": ["SDA"]
+  },
+  {
+    "title": "is part of device component",
+    "iri": "https://w3id.org/riskman/ontology#isPartOfDeviceComponent",
+    "domainOf": ["Device component"],
+    "rangeOf": ["Device component"]
+  },
+  {
+    "title": "has probability",
+    "iri": "https://w3id.org/riskman/ontology#hasProbability",
+    "description": "Probability of occurrence of harm, can additionally be expressed as a combination of separate probabilities via respective object properties hasProbability1 and hasProbability2. A decomposition into P1 and P2 is not mandatory.",
+    "domainOf": ["Risk level"],
+    "rangeOf": ["Probability"]
+  },
+  {
+    "title": "has probability1",
+    "iri": "https://w3id.org/riskman/ontology#hasProbability1",
+    "description": "Probability of a hazardous situation occurring.",
+    "domainOf": ["Risk level"],
+    "rangeOf": ["Probability"]
+  },
+  {
+    "title": "has probability2",
+    "iri": "https://w3id.org/riskman/ontology#hasProbability2",
+    "description": "Probability of a hazardous situation leading to harm.",
+    "domainOf": ["Risk level"],
+    "rangeOf": ["Probability"]
+  },
+  {
+    "title": "has severity",
+    "iri": "https://w3id.org/riskman/ontology#hasSeverity",
+    "description": "Measure of the possible consequences of a hazard.",
+    "domainOf": ["Risk level"],
+    "rangeOf": ["Severity"]
+  }
+]
