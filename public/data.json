@@ -1,0 +1,167 @@
+[
+    {
+      "title": "Assurance SDA",
+      "iri": "https://w3id.org/riskman/ontology#AssuranceSDA",
+      "description": "A safe design argument (SDA), where the purpose is to make a safety assurance.",
+      "subclassOf": ["SDA"],
+      "superclassOf": ["SDA and (has safety assurance some Thing)"],
+      "domainOf": ["has safety assurance"]
+    },
+    {
+      "title": "Assurance SDAI",
+      "iri": "https://w3id.org/riskman/ontology#AssuranceSDAI",
+      "description": "A safe design argument (SDA), where the purpose is to make a safety assurance.",
+      "superclassOf": ["Assurance SDA and SDAI"]
+    },
+    {
+      "title": "Device component",
+      "iri": "https://w3id.org/riskman/ontology#DeviceComponent",
+      "description": "A (physical or logical) part of a device.",
+      "domainOf": ["is part of device component"],
+      "rangeOf": ["has device component", "is part of device component"]
+    },
+    {
+      "title": "Device Context",
+      "iri": "https://w3id.org/riskman/ontology#DeviceContext",
+      "description": "Information about possible environments the device can be used in that may affect probability or severity of some risk.",
+      "rangeOf": ["has device context"]
+    },
+    {
+      "title": "Domain Specific Hazard",
+      "iri": "https://w3id.org/riskman/ontology#DomainSpecificHazard",
+      "description": "Structured artifact that centers around one hazard having the potential to cause one or more harm(s) in the context of a domain-specific function and component. Caution: Strictly speaking, a Domain Specific Hazard is not actually a Hazard, but a combination containing a Hazard.",
+      "subclassOf": [
+        "(causes harm some Thing)",
+        "(has device component some Thing) and (has device function some Thing) and (has hazard some Thing)"
+      ],
+      "domainOf": [
+        "causes harm",
+        "has device component",
+        "has device problem",
+        "has device function",
+        "has hazard"
+      ],
+      "rangeOf": ["has domain specific hazard"]
+    },
+    {
+      "title": "Event",
+      "iri": "https://w3id.org/riskman/ontology#Event",
+      "description": "An incidence or occurrence leading to another event and/or (eventually) a hazardous situation.",
+      "domainOf": ["has preceding event"],
+      "rangeOf": ["has event", "has preceding event"]
+    },
+    {
+      "title": "Device Function",
+      "iri": "https://w3id.org/riskman/ontology#DeviceFunction",
+      "description": "A specific functionality of a device related with the domain specific hazard.",
+      "rangeOf": ["has device function"]
+    },
+    {
+      "title": "Device Problem",
+      "iri": "https://w3id.org/riskman/ontology#DeviceProblem",
+      "description": "Information allowing to link the Domain Specific Hazard to risk reports' notion of a device problem, e.g. an IMDRF term.",
+      "rangeOf": ["has device problem"]
+    },
+    {
+      "title": "Harm",
+      "iri": "https://w3id.org/riskman/ontology#Harm",
+      "description": "Injury or damage to the health of people, or damage to property or the environment.",
+      "rangeOf": ["causes harm", "has harm"]
+    },
+    {
+      "title": "Hazard",
+      "iri": "https://w3id.org/riskman/ontology#Hazard",
+      "description": "Potential source of harm",
+      "domainOf": ["has parent hazard"],
+      "rangeOf": ["has hazard", "has parent hazard"]
+    },
+    {
+      "title": "Hazardous Situation",
+      "iri": "https://w3id.org/riskman/ontology#HazardousSituation",
+      "description": "Circumstance in which people, property or the environment is/are exposed to one or more hazards.",
+      "subclassOf": ["(has event some Thing)"],
+      "domainOf": ["has event", "has parent situation"],
+      "rangeOf": ["has hazardous situation", "has parent situation"]
+    },
+    {
+      "title": "Implementation Manifest",
+      "iri": "https://w3id.org/riskman/ontology#ImplementationManifest",
+      "description": "A concrete piece of objective evidence (or a reference to such) that an SDA has been implemented, e.g. reference to a line of code or a particular section in the device manual.",
+      "rangeOf": ["has implementation manifest"]
+    },
+    {
+      "title": "Controlled Risk",
+      "iri": "https://w3id.org/riskman/ontology#ControlledRisk",
+      "description": "Structured artifact that relates one analyzed risk with one or more SDA(s) and specifies a resulting residual risk.",
+      "subclassOf": [
+        "(is mitigated by some Thing) and (has analyzed risk some Thing) and (has residual risk level some Thing)"
+      ],
+      "domainOf": ["has analyzed risk", "has residual risk level", "is mitigated by"]
+    },
+    {
+      "title": "Patient Problem",
+      "iri": "https://w3id.org/riskman/ontology#PatientProblem",
+      "description": "Information allowing to link an Analyzed Risk to risk reports' notion of a patient problem, e.g. an IMDRF term.",
+      "rangeOf": ["has patient problem"]
+    },
+    {
+      "title": "Probability",
+      "iri": "https://w3id.org/riskman/ontology#Probability",
+      "description": "Probability of occurrence of a harm.",
+      "rangeOf": ["has Probability", "has Probability1", "has Probability2"]
+    },
+    {
+      "title": "Risk",
+      "iri": "https://w3id.org/riskman/ontology#Risk",
+      "description": "Combination of the probability of occurrence of harm and the severity of that harm.",
+      "subclassOf": ["(has harm some Thing) and (has risk level some Thing)"],
+      "domainOf": ["has harm", "has risk level"]
+    },
+    {
+      "title": "Risk Level",
+      "iri": "https://w3id.org/riskman/ontology#RiskLevel",
+      "description": "Combination of probability and severity.",
+      "subclassOf": ["(has Probability some Thing) and (has Severity some Thing)"],
+      "domainOf": ["has Probability", "has Probability1", "has Probability2", "has Severity"],
+      "rangeOf": ["has residual risk level", "has initial risk level", "has risk level"]
+    },
+    {
+        "title": "Risk SDA",
+        "iri": "https://w3id.org/riskman/ontology#RiskSDA",
+        "description": "SDA where the purpose is to mitigate an analyzed risk.",
+        "subclassOf": ["SDA"]
+      },
+      {
+        "title": "Risk SDAI",
+        "iri": "https://w3id.org/riskman/ontology#RiskSDAI",
+        "description": "Structured artifact specifying a concrete implementation or realization of a specific Risk SDA.",
+        "superclassOf": ["Risk SDA and SDAI"]
+      },
+      {
+        "title": "SDA",
+        "iri": "https://w3id.org/riskman/ontology#SDA",
+        "description": "Reusable artifact embodying or expressing one possible method or approach to risk control.",
+        "superclassOf": ["Assurance SDA", "Risk SDA"],
+        "domainOf": ["has implementation manifest", "has sub SDA"],
+        "rangeOf": ["has sub SDA", "is mitigated by"]
+      },
+      {
+        "title": "SDAI",
+        "iri": "https://w3id.org/riskman/ontology#SDAI",
+        "description": "Reusable artifact embodying or expressing one possible method or approach to risk control.",
+        "superclassOf": ["SDA and (has implementation manifest some Thing)"]
+      },
+      {
+        "title": "Severity",
+        "iri": "https://w3id.org/riskman/ontology#Severity",
+        "description": "Measure of the possible consequences of a harm.",
+        "rangeOf": ["has Severity"]
+      },
+      {
+        "title": "Safety Assurance",
+        "iri": "https://w3id.org/riskman/ontology#SafetyAssurance",
+        "description": "A credible reference (or list of such) to the state of the art of achieving safety with respect to a certain class of hazards, e.g. referring to an international norm such as ISO 60601.",
+        "rangeOf": ["has safety assurance"]
+      }
+  ]
+  
