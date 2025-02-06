@@ -1,5 +1,5 @@
 import {createFileRoute} from "@tanstack/react-router";
-import TopImage from "../../public/logo.png";
+import TopImage from "/logo.png";
 import ClassCard from "../utils/class";
 import ClassCard2 from "../utils/class2";
 import {useEffect, useState} from "react";
@@ -12,35 +12,32 @@ function Index() {
   type OntologyData = {
     title: string;
     iri: string;
-    description: string;
+    description?: string;
+    classs?: string;
     subclassOf?: string[];
     superclassOf?: string[];
     domainOf?: string[];
     rangeOf?: string[];
   };
   const [ontologyData, setOntologyData] = useState<OntologyData[]>([]);
+  const [ontologyData2, setOntologyData2] = useState<OntologyData[]>([]);
+  const [ontologyData3, setOntologyData3] = useState<OntologyData[]>([]);
+  const [ontologyData4, setOntologyData4] = useState<OntologyData[]>([]);
+  const [ontologyData5, setOntologyData5] = useState<OntologyData[]>([]);
   useEffect(() => {
-    // Fetch the JSON data from the file
     fetch("/data.json")
       .then((response) => response.json())
-      .then((data) => setOntologyData(data));
+      .then((data) =>{
+        setOntologyData(data.data1 || []); // Ensure it defaults to an empty array if undefined 
+        setOntologyData2(data.data2 || []); // Ensure it defaults to an empty array if undefined
+        setOntologyData3(data.data3 || []); // Ensure it defaults to an empty array if undefined
+        setOntologyData4(data.data4 || []); // Ensure it defaults to an empty array if undefined
+        setOntologyData5(data.data5 || []);
+      });
   }, []);
 
-  const [ontologyData2, setOntologyData2] = useState<OntologyData[]>([]);
-  useEffect(() => {
-    // Fetch the JSON data from the file
-    fetch("/data2.json")
-      .then((response) => response.json())
-      .then((data) => setOntologyData2(data));
-  }, []);
 
-  const [ontologyData3, setOntologyData3] = useState<OntologyData[]>([]);
-  useEffect(() => {
-    // Fetch the JSON data from the file
-    fetch("/data3.json")
-      .then((response) => response.json())
-      .then((data) => setOntologyData3(data));
-  }, []);
+
   return (
     <>
       <div className="bg-[#181818] min-h-screen p-8 font-sans text-[#EBEBEBA3]">
@@ -290,7 +287,7 @@ function Index() {
               key={index}
               title={item.title}
               iri={item.iri}
-              description={item.description}
+              description={item.description || ""}
               subclassOf={item.subclassOf}
               superclassOf={item.superclassOf}
               domainOf={item.domainOf}
@@ -349,7 +346,7 @@ function Index() {
               key={index}
               title={item.title}
               iri={item.iri}
-              description={item.description}
+              description={item.description || ""}
               subclassOf={item.subclassOf}
               superclassOf={item.superclassOf}
               domainOf={item.domainOf}
@@ -447,7 +444,7 @@ function Index() {
               key={index}
               title={item.title}
               iri={item.iri}
-              description={item.description}
+              description={item.description || ""}
               subclassOf={item.subclassOf}
               superclassOf={item.superclassOf}
               domainOf={item.domainOf}
@@ -455,6 +452,68 @@ function Index() {
               id={item.title.toLowerCase().replace(/\s+/g, "-")} // Generate ID
             />
           ))}
+          <section className="border border-white p-4 mt-12">
+            <h2 className="text-3xl font-bold text-center mb-4">Object properties</h2>
+            <div className="flex flex-wrap gap-x-7 gap-y-0">
+              {[
+                "has initial risk level justification",
+                "has residual risk level justification",
+              ].map((classItem) => (
+                <a
+                  key={classItem}
+                  href={`#${classItem.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="text-[#00bd7e] hover:underline whitespace-nowrap"
+                >
+                  {classItem}
+                </a>
+              ))}
+            </div>
+          </section>
+          {ontologyData4.map((item, index) => (
+            <ClassCard2
+              key={index}
+              title={item.title}
+              iri={item.iri}
+              subclassOf={item.subclassOf}
+              superclassOf={item.superclassOf}
+              domainOf={item.domainOf}
+              rangeOf={item.rangeOf}
+              id={item.title.toLowerCase().replace(/\s+/g, "-")} // Generate ID
+            />
+          ))}
+          <section className="border border-white p-4 mt-12">
+            <h2 className="text-3xl font-bold text-center mb-4">Named individuals</h2>
+            <div className="flex flex-wrap gap-x-7 gap-y-0">
+              {[
+                "Availability",
+                "Confidentiality",
+                "Integrity",
+              ].map((classItem) => (
+                <a
+                  key={classItem}
+                  href={`#${classItem.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="text-[#00bd7e] hover:underline whitespace-nowrap"
+                >
+                  {classItem}
+                </a>
+              ))}
+            </div>
+          </section>
+          {ontologyData5.map((item, index) => (
+            <ClassCard2
+              key={index}
+              title={item.title}
+              iri={item.iri}
+              classs={item.classs}
+              id={item.title.toLowerCase().replace(/\s+/g, "-")} // Generate ID
+            />
+          ))}
+
+            <div className="text-center justify-center mt-12 mb-11">
+            Made with <span className="text-[#00bd7e]">ontoglimpse</span> in Dresden.
+            </div>
+          
+
 
 
         </div>
