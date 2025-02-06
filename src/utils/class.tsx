@@ -47,7 +47,10 @@ const ClassCard: React.FC<ClassCardProps> = ({
             </p>
             <ul className="list-disc list-inside ml-4">
               {subclassOf.map((item, index) => (
+                <a key={item}
+                href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
                 <li key={index} className="text-[#00bd7e]">{item}</li>
+                </a>
               ))}
             </ul>
           </>
@@ -60,7 +63,10 @@ const ClassCard: React.FC<ClassCardProps> = ({
             </p>
             <ul className="list-disc list-inside ml-4">
               {superclassOf.map((item, index) => (
+                <a key={item}
+                href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
                 <li key={index} className="text-[#00bd7e]">{item}</li>
+                </a>
               ))}
             </ul>
           </>
@@ -73,7 +79,10 @@ const ClassCard: React.FC<ClassCardProps> = ({
             </p>
             <ul className="list-disc list-inside ml-4">
               {domainOf.map((item, index) => (
+                <a key={item}
+                href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
                 <li key={index} className="text-[#00bd7e]">{item}</li>
+                </a>
               ))}
             </ul>
           </>
@@ -86,7 +95,10 @@ const ClassCard: React.FC<ClassCardProps> = ({
             </p>
             <ul className="list-disc list-inside ml-4">
               {rangeOf.map((item, index) => (
+                <a key={item}
+                href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
                 <li key={index} className="text-[#00bd7e]">{item}</li>
+                </a>
               ))}
             </ul>
           </>

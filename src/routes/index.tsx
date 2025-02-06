@@ -1,8 +1,8 @@
-import {createFileRoute} from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import TopImage from "/logo.png";
 import ClassCard from "../utils/class";
 import ClassCard2 from "../utils/class2";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -27,8 +27,8 @@ function Index() {
   useEffect(() => {
     fetch("/data.json")
       .then((response) => response.json())
-      .then((data) =>{
-        setOntologyData(data.data1 || []); // Ensure it defaults to an empty array if undefined 
+      .then((data) => {
+        setOntologyData(data.data1 || []); // Ensure it defaults to an empty array if undefined
         setOntologyData2(data.data2 || []); // Ensure it defaults to an empty array if undefined
         setOntologyData3(data.data3 || []); // Ensure it defaults to an empty array if undefined
         setOntologyData4(data.data4 || []); // Ensure it defaults to an empty array if undefined
@@ -36,15 +36,13 @@ function Index() {
       });
   }, []);
 
-
-
   return (
     <>
       <div className="bg-[#181818] min-h-screen p-8 font-sans text-[#EBEBEBA3]">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <header className="flex items-center justify-between border-b-2 border-white pb-4 mb-6">
-            <img src={TopImage} alt="Riskman Ontology Logo" className="h-20"/>
+            <img src={TopImage} alt="Riskman Ontology Logo" className="h-20" />
             <div className="flex-1 text-center">
               <h1 className="text-3xl font-bold text-[#EBEBEBA3]">
                 The Riskman Ontology
@@ -109,7 +107,11 @@ function Index() {
               <div className="lg:w-1/3 lg:mt-0 mt-8">
                 <h2 className="text-2xl font-semibold pb-2 mb-4">License:</h2>
                 <div className="flex items-center space-x-6 ml-6">
-                  <span className="font-bold">CC BY 4.0</span>
+                  <a href="https://creativecommons.org/licenses/by/4.0/">
+                    <div className="px-3 py-1 border border-green-500 text-green-500 rounded">
+                      CC BY 4.0
+                    </div>
+                  </a>
                   <img
                     src="https://licensebuttons.net/l/by/4.0/88x31.png"
                     alt="CC BY 4.0"
@@ -232,7 +234,10 @@ function Index() {
           </section>
 
           {/* Detailed Class Section */}
-          <section className="border border-white-100 p-1 mt-12">
+          <section
+            className="border border-white-100 p-1 mt-12"
+            id="#analyzed-risk"
+          >
             <h3 className="text-lg ">Analyzed risk</h3>
             <div className="border border-white-100"></div>
 
@@ -259,26 +264,55 @@ function Index() {
               </p>
               <ul className="list-disc  ml-8">
                 <li className="text-[#00bd7e]">
-                  (has domain specific hazard some Thing) and (has harm some
-                  Thing) and (has device context some Thing) and (has hazardous
-                  situation some Thing) and (has initial risk level some Thing)
+                  <a href="#has-domain-specific-hazard">
+                    (has domain specific hazard
+                  </a>{" "}
+                  <span className="text-gray-300">some </span> Thing){" "}
+                  <span className="text-gray-300">and</span>{" "}
+                  <a href="#has-harm">(has harm</a>{" "}
+                  <span className="text-gray-300">some </span>
+                  Thing) <span className="text-gray-300">and</span>{" "}
+                  <a href="#has-device-context">(has device context</a>{" "}
+                  <span className="text-gray-300">some </span> Thing){" "}
+                  <span className="text-gray-300">and </span>{" "}
+                  <a href="#has-hazardous-situation">
+                    (has hazardous situation
+                  </a>{" "}
+                  <span className="text-gray-300">some </span> Thing){" "}
+                  <span className="text-gray-300">and </span>{" "}
+                  <a href="#has-initial-risk-level">(has initial risk level</a>{" "}
+                  <span className="text-gray-300">some </span> Thing)
                 </li>
               </ul>
               <p>
                 <span className="text-sm">Domain of:</span>
               </p>
               <ul className="list-disc list-inside ml-4">
-                <li className="text-[#00bd7e]">has device context</li>
-                <li className="text-[#00bd7e]">has domain specific hazard</li>
-                <li className="text-[#00bd7e]">has hazardous situation</li>
-                <li className="text-[#00bd7e]">has patient problem</li>
-                <li className="text-[#00bd7e]">has initial risk level</li>
+                <li className="text-[#00bd7e]">
+                  <a href="#has-device-context">has device context</a>
+                </li>
+                <li className="text-[#00bd7e]">
+                  <a href="#has-domain-specific-hazard">
+                    has domain specific hazard
+                  </a>
+                </li>
+                <li className="text-[#00bd7e]">
+                  <a href="#has-hazardous-situation">has hazardous situation</a>
+                </li>
+                <li className="text-[#00bd7e]">
+                  <a href="#has-patient-problem">has patient problem</a>
+                </li>
+                <li className="text-[#00bd7e]">
+                  <a href="#has-initial-risk-level">has initial risk level</a>
+                </li>
               </ul>
               <p>
                 <span className="text-sm">Range of:</span>
               </p>
               <ul className="list-disc list-inside ml-4">
-                <li className="text-[#00bd7e]">has analyzed risk</li>
+                <a href="#has-analyzed-risk">
+                  <li className="text-[#00bd7e]">has analyzed risk</li>
+                </a>
               </ul>
             </div>
           </section>
@@ -296,9 +330,10 @@ function Index() {
             />
           ))}
 
-
           <section className="border border-white p-4 mt-12">
-            <h2 className="text-3xl font-bold text-center mb-4">Object properties</h2>
+            <h2 className="text-3xl font-bold text-center mb-4">
+              Object properties
+            </h2>
             <div className="flex flex-wrap gap-x-7 gap-y-0">
               {[
                 "causes harm",
@@ -357,11 +392,14 @@ function Index() {
 
           <div className="border-b-2 my-12 border-white"></div>
 
-          <h2 className="text-3xl font-bold text-center mb-4">Extension of the Riskman Ontology for Security</h2>
-          <p className={"text-l font-bold text-center mb-4"}>Experimental section</p>
+          <h2 className="text-3xl font-bold text-center mb-4">
+            Extension of the Riskman Ontology for Security
+          </h2>
+          <p className={"text-l font-bold text-center mb-4"}>
+            Experimental section
+          </p>
 
           <div className="border-b-2 my-12 border-white"></div>
-
 
           <div className="lg:w-1/3">
             <h2 className="text-2xl font-semibold pb-2 mb-4">Metadata:</h2>
@@ -409,12 +447,12 @@ function Index() {
             </div>
           </div>
 
-
           <div className="border-b-2 my-12 border-white"></div>
 
           <h2 className="text-3xl font-bold  mb-4">Description:</h2>
           <p className="pl-5 text-gray-300">
-            An extension of the Riskman ontology that also takes in account security aspects of medical devices.
+            An extension of the Riskman ontology that also takes in account
+            security aspects of medical devices.
           </p>
 
           <section className="border border-white p-4 mt-12">
@@ -426,7 +464,6 @@ function Index() {
                 "Controlled security risk",
                 "Justification",
                 "Risk level needing justification",
-
               ].map((classItem) => (
                 <a
                   key={classItem}
@@ -453,7 +490,9 @@ function Index() {
             />
           ))}
           <section className="border border-white p-4 mt-12">
-            <h2 className="text-3xl font-bold text-center mb-4">Object properties</h2>
+            <h2 className="text-3xl font-bold text-center mb-4">
+              Object properties
+            </h2>
             <div className="flex flex-wrap gap-x-7 gap-y-0">
               {[
                 "has initial risk level justification",
@@ -482,21 +521,21 @@ function Index() {
             />
           ))}
           <section className="border border-white p-4 mt-12">
-            <h2 className="text-3xl font-bold text-center mb-4">Named individuals</h2>
+            <h2 className="text-3xl font-bold text-center mb-4">
+              Named individuals
+            </h2>
             <div className="flex flex-wrap gap-x-7 gap-y-0">
-              {[
-                "Availability",
-                "Confidentiality",
-                "Integrity",
-              ].map((classItem) => (
-                <a
-                  key={classItem}
-                  href={`#${classItem.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="text-[#00bd7e] hover:underline whitespace-nowrap"
-                >
-                  {classItem}
-                </a>
-              ))}
+              {["Availability", "Confidentiality", "Integrity"].map(
+                (classItem) => (
+                  <a
+                    key={classItem}
+                    href={`#${classItem.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="text-[#00bd7e] hover:underline whitespace-nowrap"
+                  >
+                    {classItem}
+                  </a>
+                )
+              )}
             </div>
           </section>
           {ontologyData5.map((item, index) => (
@@ -509,13 +548,10 @@ function Index() {
             />
           ))}
 
-            <div className="text-center justify-center mt-12 mb-11">
-            Made with <span className="text-[#00bd7e]">ontoglimpse</span> in Dresden.
-            </div>
-          
-
-
-
+          <div className="text-center justify-center mt-12 mb-11">
+            Made with <span className="text-[#00bd7e]">ontoglimpse</span> in
+            Dresden.
+          </div>
         </div>
       </div>
     </>
