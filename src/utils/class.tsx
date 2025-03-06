@@ -1,4 +1,5 @@
 import React from "react";
+import { theme } from "../theme/constants";
 
 type ClassCardProps = {
   title: string;
@@ -49,7 +50,7 @@ const ClassCard: React.FC<ClassCardProps> = ({
               {subclassOf.map((item, index) => (
                 <a key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                <li key={index} className="text-[#00bd7e]">{item}</li>
+                <li key={index} className={`text-[${theme.colors.primary}]`}>{item}</li>
                 </a>
               ))}
             </ul>
@@ -65,7 +66,7 @@ const ClassCard: React.FC<ClassCardProps> = ({
               {superclassOf.map((item, index) => (
                 <a key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                <li key={index} className="text-[#00bd7e]">{item}</li>
+                <li key={index} className={`text-[${theme.colors.primary}]`}>{item}</li>
                 </a>
               ))}
             </ul>
@@ -81,7 +82,7 @@ const ClassCard: React.FC<ClassCardProps> = ({
               {domainOf.map((item, index) => (
                 <a key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                <li key={index} className="text-[#00bd7e]">{item}</li>
+                <li key={index} className={`text-[${theme.colors.primary}]`}>{item}</li>
                 </a>
               ))}
             </ul>
@@ -97,7 +98,7 @@ const ClassCard: React.FC<ClassCardProps> = ({
               {rangeOf.map((item, index) => (
                 <a key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                <li key={index} className="text-[#00bd7e]">{item}</li>
+                <li key={index} className={`text-[${theme.colors.primary}]`}>{item}</li>
                 </a>
               ))}
             </ul>

@@ -3,6 +3,7 @@ import TopImage from "/logo.png";
 import ClassCard from "../utils/class";
 import ClassCard2 from "../utils/class2";
 import { useEffect, useState } from "react";
+import { theme } from "../theme/constants";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -38,16 +39,16 @@ function Index() {
 
   return (
     <>
-      <div className="bg-[#181818] min-h-screen p-8 font-sans text-[#EBEBEBA3]">
+      <div className={`bg-[${theme.colors.background}] min-h-screen p-8 font-sans text-[${theme.colors.text.primary}]`}>
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <header className="flex items-center justify-between border-b-2 border-white pb-4 mb-6">
             <img src={TopImage} alt="Riskman Ontology Logo" className="h-20" />
             <div className="flex-1 text-center">
-              <h1 className="text-3xl font-bold text-[#EBEBEBA3]">
+              <h1 className={`text-3xl font-bold text-[${theme.colors.text.primary}]`}>
                 The Riskman Ontology
               </h1>
-              <p className="mt-2 text-[#EBEBEBA3]">
+              <p className={`mt-2 text-[${theme.colors.text.primary}]`}>
                 Digital Risk Management Ontology
               </p>
             </div>
@@ -64,7 +65,7 @@ function Index() {
                     <span className="font-bold">Documentation:</span>{" "}
                     <a
                       href="https://w3id.org/riskman"
-                      className="text-[#00bd7e] hover:underline"
+                      className={`text-[${theme.colors.primary}] hover:underline`}
                     >
                       https://w3id.org/riskman
                     </a>
@@ -73,7 +74,7 @@ function Index() {
                     <span className="font-bold">Ontology:</span>{" "}
                     <a
                       href="https://w3id.org/riskman/ontology"
-                      className="text-[#00bd7e] hover:underline"
+                      className={`text-[${theme.colors.primary}] hover:underline`}
                     >
                       https://w3id.org/riskman/ontology
                     </a>
@@ -82,7 +83,7 @@ function Index() {
                     <span className="font-bold">Shapes:</span>{" "}
                     <a
                       href="https://w3id.org/riskman/shapes"
-                      className="text-[#00bd7e] hover:underline"
+                      className={`text-[${theme.colors.primary}] hover:underline`}
                     >
                       https://w3id.org/riskman/shapes
                     </a>
@@ -91,7 +92,7 @@ function Index() {
                     <span className="font-bold">GitHub repo:</span>{" "}
                     <a
                       href="https://w3id.org/riskman/repo"
-                      className="text-[#00bd7e] hover:underline"
+                      className={`text-[${theme.colors.primary}] hover:underline`}
                     >
                       https://w3id.org/riskman/repo
                     </a>
@@ -140,7 +141,7 @@ function Index() {
                     "Stephan Mennicke (ICCL, TU Dresden)",
                     "Hannes Straß (ICCL, TU Dresden)",
                   ].map((creator, index) => (
-                    <li key={index} className="text-[#00bd7e]">
+                    <li key={index} className={`text-[${theme.colors.primary}]`}>
                       {creator}
                     </li>
                   ))}
@@ -225,7 +226,7 @@ function Index() {
                 <a
                   key={classItem}
                   href={`#${classItem.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="text-[#00bd7e] hover:underline whitespace-nowrap"
+                  className={`text-[${theme.colors.primary}] hover:underline whitespace-nowrap`}
                 >
                   {classItem}
                 </a>
@@ -246,7 +247,7 @@ function Index() {
               <i>
                 <a
                   href="https://w3id.org/riskman/ontology#AnalyzedRisk"
-                  className="hover:underline"
+                  className={`text-[${theme.colors.primary}] hover:underline`}
                 >
                   https://w3id.org/riskman/ontology#AnalyzedRisk
                 </a>
@@ -263,7 +264,7 @@ function Index() {
                 <span className="text-sm">Superclass of:</span>
               </p>
               <ul className="list-disc  ml-8">
-                <li className="text-[#00bd7e]">
+                <li className={`text-[${theme.colors.primary}]`}>
                   <a href="#has-domain-specific-hazard">
                     (has domain specific hazard
                   </a>{" "}
@@ -288,21 +289,21 @@ function Index() {
                 <span className="text-sm">Domain of:</span>
               </p>
               <ul className="list-disc list-inside ml-4">
-                <li className="text-[#00bd7e]">
+                <li className={`text-[${theme.colors.primary}]`}>
                   <a href="#has-device-context">has device context</a>
                 </li>
-                <li className="text-[#00bd7e]">
+                <li className={`text-[${theme.colors.primary}]`}>
                   <a href="#has-domain-specific-hazard">
                     has domain specific hazard
                   </a>
                 </li>
-                <li className="text-[#00bd7e]">
+                <li className={`text-[${theme.colors.primary}]`}>
                   <a href="#has-hazardous-situation">has hazardous situation</a>
                 </li>
-                <li className="text-[#00bd7e]">
+                <li className={`text-[${theme.colors.primary}]`}>
                   <a href="#has-patient-problem">has patient problem</a>
                 </li>
-                <li className="text-[#00bd7e]">
+                <li className={`text-[${theme.colors.primary}]`}>
                   <a href="#has-initial-risk-level">has initial risk level</a>
                 </li>
               </ul>
@@ -311,7 +312,7 @@ function Index() {
               </p>
               <ul className="list-disc list-inside ml-4">
                 <a href="#has-analyzed-risk">
-                  <li className="text-[#00bd7e]">has analyzed risk</li>
+                  <li className={`text-[${theme.colors.primary}]`}>has analyzed risk</li>
                 </a>
               </ul>
             </div>
@@ -369,7 +370,7 @@ function Index() {
                 <a
                   key={classItem}
                   href={`#${classItem.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="text-[#00bd7e] hover:underline whitespace-nowrap"
+                  className={`text-[${theme.colors.primary}] hover:underline whitespace-nowrap`}
                 >
                   {classItem}
                 </a>
@@ -408,7 +409,7 @@ function Index() {
                 <span className="font-bold">Documentation:</span>{" "}
                 <a
                   href="https://w3id.org/riskman"
-                  className="text-[#00bd7e] hover:underline"
+                  className={`text-[${theme.colors.primary}] hover:underline`}
                 >
                   https://w3id.org/riskman
                 </a>
@@ -417,7 +418,7 @@ function Index() {
                 <span className="font-bold">Ontology:</span>{" "}
                 <a
                   href="https://w3id.org/riskman/ontology/security"
-                  className="text-[#00bd7e] hover:underline"
+                  className={`text-[${theme.colors.primary}] hover:underline`}
                 >
                   https://w3id.org/riskman/ontology/security
                 </a>
@@ -426,7 +427,7 @@ function Index() {
                 <span className="font-bold">Shapes:</span>{" "}
                 <a
                   href="https://w3id.org/riskman/shapes/security"
-                  className="text-[#00bd7e] hover:underline"
+                  className={`text-[${theme.colors.primary}] hover:underline`}
                 >
                   https://w3id.org/riskman/shapes/security
                 </a>
@@ -435,7 +436,7 @@ function Index() {
                 <span className="font-bold">GitHub repo:</span>{" "}
                 <a
                   href="https://w3id.org/riskman/repo"
-                  className="text-[#00bd7e] hover:underline"
+                  className={`text-[${theme.colors.primary}] hover:underline`}
                 >
                   https://w3id.org/riskman/repo
                 </a>
@@ -468,7 +469,7 @@ function Index() {
                 <a
                   key={classItem}
                   href={`#${classItem.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="text-[#00bd7e] hover:underline whitespace-nowrap"
+                  className={`text-[${theme.colors.primary}] hover:underline whitespace-nowrap`}
                 >
                   {classItem}
                 </a>
@@ -501,7 +502,7 @@ function Index() {
                 <a
                   key={classItem}
                   href={`#${classItem.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="text-[#00bd7e] hover:underline whitespace-nowrap"
+                  className={`text-[${theme.colors.primary}] hover:underline whitespace-nowrap`}
                 >
                   {classItem}
                 </a>
@@ -530,7 +531,7 @@ function Index() {
                   <a
                     key={classItem}
                     href={`#${classItem.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="text-[#00bd7e] hover:underline whitespace-nowrap"
+                    className={`text-[${theme.colors.primary}] hover:underline whitespace-nowrap`}
                   >
                     {classItem}
                   </a>
@@ -549,7 +550,7 @@ function Index() {
           ))}
 
           <div className="text-center justify-center mt-12 mb-11">
-            Made with <span className="text-[#00bd7e]">ontoglimpse</span> in
+            Made with <span className={`text-[${theme.colors.primary}]`}>ontoglimpse</span> in
             Dresden.
           </div>
         </div>

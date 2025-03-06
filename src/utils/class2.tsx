@@ -1,4 +1,5 @@
 import React from "react";
+import { theme } from "../theme/constants";
 
 type ClassCardProps = {
   title: string;
@@ -49,7 +50,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
             <ul className="list-disc list-inside ml-4">
             <a key={classs}
                 href={`#${classs.toLowerCase().replace(/\s+/g, "-")}`}>
-                <li key={classs} className="text-[#00bd7e]">{classs}</li>
+                <li key={classs} className={`text-[${theme.colors.primary}]`}>{classs}</li>
                 </a>
             </ul>
           </p>
@@ -64,7 +65,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
               {subclassOf.map((item, index) => (
                 <a key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                <li key={index} className="text-[#00bd7e]">{item}</li>
+                <li key={index} className={`text-[${theme.colors.primary}]`}>{item}</li>
                 </a>
               ))}
             </ul>
@@ -80,7 +81,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
               {superclassOf.map((item, index) => (
                 <a key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                <li key={index} className="text-[#00bd7e]">{item}</li>
+                <li key={index} className={`text-[${theme.colors.primary}]`}>{item}</li>
                 </a>
               ))}
             </ul>
@@ -96,7 +97,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
               {domainOf.map((item, index) => (
                 <a key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                <li key={index} className="text-[#00bd7e]">{item}</li>
+                <li key={index} className={`text-[${theme.colors.primary}]`}>{item}</li>
                 </a>
               ))}
             </ul>
@@ -112,7 +113,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
               {rangeOf.map((item, index) => (
                 <a key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                <li key={index} className="text-[#00bd7e]">{item}</li>
+                <li key={index} className={`text-[${theme.colors.primary}]`}>{item}</li>
                 </a>
               ))}
             </ul>
