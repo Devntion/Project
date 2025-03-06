@@ -50,7 +50,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
             <ul className="list-disc list-inside ml-4">
             <a key={classs}
                 href={`#${classs.toLowerCase().replace(/\s+/g, "-")}`}>
-                <li key={classs} className={`text-[${theme.colors.primary}]`}>{classs}</li>
+                <li key={classs} className="text-primary">{classs}</li>
                 </a>
             </ul>
           </p>
