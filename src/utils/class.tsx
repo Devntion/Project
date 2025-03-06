@@ -1,5 +1,4 @@
 import React from "react";
-import { theme } from "../theme/constants";
 
 type ClassCardProps = {
   title: string;
