@@ -1,6 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ClassCard2 from "../utils/class2";
+
+type OntologyData = {
+  title: string;
+  iri: string;
+  description?: string;
+  classs?: string;
+  subclassOf?: string[];
+  superclassOf?: string[];
+  domainOf?: string[];
+  rangeOf?: string[];
+};
 
 const GitGraphDataset: React.FC = () => {
+  const [additionalData1, setAdditionalData1] = useState<OntologyData[]>([]);
+  const [additionalData2, setAdditionalData2] = useState<OntologyData[]>([]);
+  const [additionalData3, setAdditionalData3] = useState<OntologyData[]>([]);
+
+  useEffect(() => {
+    // Fetch data2.json
+    fetch("/data2.json")
+      .then((response) => {
+        console.log("data2.json response status:", response.status);
+        return response.json();
+      })
+      .then((data) => {
+        console.log("data2.json loaded:", data);
+        setAdditionalData1(data.data1 || []);
+        setAdditionalData2(data.data2 || []);
+        setAdditionalData3(data.data3 || []);
+      })
+      .catch(error => console.error("Error fetching data2.json:", error));
+  }, []);
+
   return (
     <div className="text-text-primary">
       <h2 className="text-3xl font-bold text-center mb-4">GitGraph Dataset</h2>
@@ -140,6 +172,68 @@ const GitGraphDataset: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Classes */}
+      <div className="mb-8">
+        {additionalData1.length > 0 && (
+          <>
+            <h2 className="text-3xl font-bold text-center mb-4"></h2>
+            {additionalData1.map((item, index) => (
+              <ClassCard2
+                key={index}
+                title={item.title}
+                iri={item.iri}
+                description={item.description || ""}
+                subclassOf={item.subclassOf}
+                superclassOf={item.superclassOf}
+                domainOf={item.domainOf}
+                rangeOf={item.rangeOf}
+                id={item.title.toLowerCase().replace(/\s+/g, "-")}
+              />
+            ))}
+          </>
+        )}
+      </div>
+
+      {/* Object Properties */}
+      <div className="mb-8">
+        {additionalData2.length > 0 && (
+          <>
+            <h2 className="text-3xl font-bold text-center mb-4"></h2>
+            {additionalData2.map((item, index) => (
+              <ClassCard2
+                key={index}
+                title={item.title}
+                iri={item.iri}
+                description={item.description || ""}
+                domainOf={item.domainOf}
+                rangeOf={item.rangeOf}
+                id={item.title.toLowerCase().replace(/\s+/g, "-")}
+              />
+            ))}
+          </>
+        )}
+      </div>
+
+      {/* Additional Properties */}
+      <div>
+        {additionalData3.length > 0 && (
+          <>
+            <h2 className="text-3xl font-bold text-center mb-4"></h2>
+            {additionalData3.map((item, index) => (
+              <ClassCard2
+                key={index}
+                title={item.title}
+                iri={item.iri}
+                description={item.description || ""}
+                domainOf={item.domainOf}
+                rangeOf={item.rangeOf}
+                id={item.title.toLowerCase().replace(/\s+/g, "-")}
+              />
+            ))}
+          </>
+        )}
+      </div>
     </div>
   );
 };

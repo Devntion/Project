@@ -1,13 +1,59 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TopImage from "/logo.png";
-import { mainMetadata } from "../data/metadata";
-import { authors } from "../data/authors";
+
+type Author = {
+  name: string;
+  affiliation: string;
+  role: 'creator' | 'contributor';
+};
+
+type Metadata = {
+  title: string;
+  description: string;
+  abstract?: string;
+  links: {
+    documentation: string;
+    ontology: string;
+    shapes: string;
+    github: string;
+  };
+  dates: {
+    creation: string;
+    modification: string;
+  };
+  license: {
+    name: string;
+    url: string;
+    imageUrl: string;
+  };
+};
 
 const Header: React.FC = () => {
+  const [authors, setAuthors] = useState<Author[]>([]);
+  const [mainMetadata, setMainMetadata] = useState<Metadata | null>(null);
+
+  useEffect(() => {
+    // Fetch authors data
+    fetch("/authors.json")
+      .then(response => response.json())
+      .then(data => {
+        setAuthors(data.authors);
+      })
+      .catch(error => console.error("Error fetching authors:", error));
+
+    // Fetch metadata
+    fetch("/metadata.json")
+      .then(response => response.json())
+      .then(data => {
+        setMainMetadata(data.mainMetadata);
+      })
+      .catch(error => console.error("Error fetching metadata:", error));
+  }, []);
+
   const creators = authors.filter(a => a.role === 'creator');
   const contributors = authors.filter(a => a.role === 'contributor');
 
-  const renderLinks = (metadata: typeof mainMetadata) => (
+  const renderLinks = (metadata: Metadata) => (
     <ul className="space-y-1 ml-5">
       <li>
         <span className="font-bold">Documentation:</span>{" "}
@@ -36,17 +82,21 @@ const Header: React.FC = () => {
     </ul>
   );
 
-  const renderDates = (metadata: typeof mainMetadata) => (
+  const renderDates = (metadata: Metadata) => (
     <div className="mt-4 text-lg text-gray-400 ml-5">
       <p>Creation date: {metadata.dates.creation}</p>
       <p>Modification date: {metadata.dates.modification}</p>
     </div>
   );
 
+  if (!mainMetadata) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       {/* Header */}
-      <header className="flex items-center justify-between border-b-2 border-white pb-4 mb-6">
+      <header className="flex items-center justify-between border-b-2 border-border-separator pb-4 mb-6">
         <img src={TopImage} alt="Riskman Ontology Logo" className="h-20" />
         <div className="flex-1 text-center">
           <h1 className="text-3xl font-bold text-text-primary">
@@ -88,7 +138,7 @@ const Header: React.FC = () => {
       </section>
 
       <section className="mb-8">
-        <div className="border-b-2 border-white"></div>
+        <div className="border-b-2 border-border-separator"></div>
         <div className="flex flex-col lg:flex-row">
           {/* Creators Section */}
           <div className="lg:w-1/3">
@@ -122,7 +172,7 @@ const Header: React.FC = () => {
 
       {/* Description Section */}
       <section className="mb-8">
-        <div className="border-b-2 border-white"></div>
+        <div className="border-b-2 border-border-separator"></div>
         <h2 className="text-2xl font-semibold pb-2 mb-4 pt-5">
           Description:
         </h2>
