@@ -65,7 +65,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
               {subclassOf.map((item, index) => (
                 <a key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                <li key={index} className={`text-[${theme.colors.primary}]`}>{item}</li>
+                <li key={index} className="text-primary">{item}</li>
                 </a>
               ))}
             </ul>
@@ -81,7 +81,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
               {superclassOf.map((item, index) => (
                 <a key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                <li key={index} className={`text-[${theme.colors.primary}]`}>{item}</li>
+                <li key={index} className="text-primary">{item}</li>
                 </a>
               ))}
             </ul>
@@ -97,7 +97,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
               {domainOf.map((item, index) => (
                 <a key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                <li key={index} className={`text-[${theme.colors.primary}]`}>{item}</li>
+                <li key={index} className="text-primary">{item}</li>
                 </a>
               ))}
             </ul>
@@ -113,7 +113,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
               {rangeOf.map((item, index) => (
                 <a key={item}
                 href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                <li key={index} className={`text-[${theme.colors.primary}]`}>{item}</li>
+                <li key={index} className="text-primary">{item}</li>
                 </a>
               ))}
             </ul>
