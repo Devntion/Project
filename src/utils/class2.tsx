@@ -24,7 +24,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
   id,
 }) => {
   // Check if there's any data to display in the dotted border section
-  const hasData = classs || 
+  const hasData = (classs && classs.length > 0) || 
     (subclassOf && subclassOf.length > 0) || 
     (superclassOf && superclassOf.length > 0) || 
     (domainOf && domainOf.length > 0) || 
@@ -51,16 +51,17 @@ const ClassCard2: React.FC<ClassCardProps> = ({
 
       {hasData && (
         <div className="border-dashed border p-2 border-white-100 space-y-0 mt-4 ml-3 mb-3">
-          {classs && (<>
-            <p>
-              <span className="text-sm">Class:</span>
-              <ul className="list-disc list-inside ml-4">
-              <a key={classs}
-                  href={`#${classs.toLowerCase().replace(/\s+/g, "-")}`}>
-                  <li key={classs} className="text-primary">{classs}</li>
+          {classs && classs.length > 0 && (
+            <>
+              <p>
+                <span className="text-sm">Class:</span>
+                <ul className="list-disc list-inside ml-4">
+                  <a key={classs}
+                    href={`#${classs.toLowerCase().replace(/\s+/g, "-")}`}>
+                    <li key={classs} className="text-primary">{classs}</li>
                   </a>
-              </ul>
-            </p>
+                </ul>
+              </p>
             </>
           )}
           {subclassOf && subclassOf.length > 0 && (
@@ -111,7 +112,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
             </>
           )}
 
-           {rangeOf && rangeOf.length > 0 && (
+          {rangeOf && rangeOf.length > 0 && (
             <>
               <p>
                 <span className="text-sm">Range:</span>
@@ -125,7 +126,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
                 ))}
               </ul>
             </>
-          )} 
+          )}
         </div>
       )}
     </section>
