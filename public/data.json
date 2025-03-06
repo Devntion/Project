@@ -1,412 +1,355 @@
 {
     "data1": [
         {
-          "title": "Assurance SDA",
-          "iri": "https://w3id.org/riskman/ontology#AssuranceSDA",
-          "description": "A safe design argument (SDA), where the purpose is to make a safety assurance.",
-          "subclassOf": ["SDA"],
-          "superclassOf": ["SDA and (has safety assurance some Thing)"],
-          "domainOf": ["has safety assurance"]
+          "title": "Repository",
+          "iri": "https://semrepo.com/class/repository",
+          "description": ""
         },
         {
-          "title": "Assurance SDAI",
-          "iri": "https://w3id.org/riskman/ontology#AssuranceSDAI",
-          "description": "A safe design argument (SDA), where the purpose is to make a safety assurance.",
-          "superclassOf": ["Assurance SDA and SDAI"]
+          "title": "Person",
+          "iri": "https://semrepo.com/class/person",
+          "description": ""
         },
         {
-          "title": "Device component",
-          "iri": "https://w3id.org/riskman/ontology#DeviceComponent",
-          "description": "A (physical or logical) part of a device.",
-          "domainOf": ["is part of device component"],
-          "rangeOf": ["has device component", "is part of device component"]
+          "title": "Author",
+          "iri": "https://semrepo.com/class/author",
+          "description": "",
+          "subclassOf": ["Person"]
         },
         {
-          "title": "Device Context",
-          "iri": "https://w3id.org/riskman/ontology#DeviceContext",
-          "description": "Information about possible environments the device can be used in that may affect probability or severity of some risk.",
-          "rangeOf": ["has device context"]
+          "title": "Stargazer",
+          "iri": "https://semrepo.com/class/stargazer",
+          "description": "",
+          "subclassOf": ["Person"]
         },
         {
-          "title": "Domain Specific Hazard",
-          "iri": "https://w3id.org/riskman/ontology#DomainSpecificHazard",
-          "description": "Structured artifact that centers around one hazard having the potential to cause one or more harm(s) in the context of a domain-specific function and component. Caution: Strictly speaking, a Domain Specific Hazard is not actually a Hazard, but a combination containing a Hazard.",
-          "subclassOf": [
-            "(causes harm some Thing)",
-            "(has device component some Thing) and (has device function some Thing) and (has hazard some Thing)"
-          ],
-          "domainOf": [
-            "causes harm",
-            "has device component",
-            "has device problem",
-            "has device function",
-            "has hazard"
-          ],
-          "rangeOf": ["has domain specific hazard"]
+          "title": "Watcher",
+          "iri": "https://semrepo.com/class/watcher",
+          "description": "",
+          "subclassOf": ["Person"]
         },
         {
-          "title": "Event",
-          "iri": "https://w3id.org/riskman/ontology#Event",
-          "description": "An incidence or occurrence leading to another event and/or (eventually) a hazardous situation.",
-          "domainOf": ["has preceding event"],
-          "rangeOf": ["has event", "has preceding event"]
+          "title": "Issue Author",
+          "iri": "https://semrepo.com/class/issueAuthor",
+          "description": "",
+          "subclassOf": ["Person"]
         },
         {
-          "title": "Device Function",
-          "iri": "https://w3id.org/riskman/ontology#DeviceFunction",
-          "description": "A specific functionality of a device related with the domain specific hazard.",
-          "rangeOf": ["has device function"]
+          "title": "Forker",
+          "iri": "https://semrepo.com/class/forker",
+          "description": "",
+          "subclassOf": ["Person"]
         },
         {
-          "title": "Device Problem",
-          "iri": "https://w3id.org/riskman/ontology#DeviceProblem",
-          "description": "Information allowing to link the Domain Specific Hazard to risk reports' notion of a device problem, e.g. an IMDRF term.",
-          "rangeOf": ["has device problem"]
+          "title": "Forked Repository",
+          "iri": "https://semrepo.com/class/forkedRepo",
+          "description": ""
         },
         {
-          "title": "Harm",
-          "iri": "https://w3id.org/riskman/ontology#Harm",
-          "description": "Injury or damage to the health of people, or damage to property or the environment.",
-          "rangeOf": ["causes harm", "has harm"]
+          "title": "Repository Topic",
+          "iri": "https://semrepo.com/class/topic",
+          "description": ""
         },
         {
-          "title": "Hazard",
-          "iri": "https://w3id.org/riskman/ontology#Hazard",
-          "description": "Potential source of harm",
-          "domainOf": ["has parent hazard"],
-          "rangeOf": ["has hazard", "has parent hazard"]
+          "title": "GitHub Bot",
+          "iri": "https://semrepo.com/class/bot",
+          "description": ""
         },
         {
-          "title": "Hazardous Situation",
-          "iri": "https://w3id.org/riskman/ontology#HazardousSituation",
-          "description": "Circumstance in which people, property or the environment is/are exposed to one or more hazards.",
-          "subclassOf": ["(has event some Thing)"],
-          "domainOf": ["has event", "has parent situation"],
-          "rangeOf": ["has hazardous situation", "has parent situation"]
+          "title": "GitHub Organization",
+          "iri": "https://semrepo.com/class/organization",
+          "description": ""
         },
         {
-          "title": "Implementation Manifest",
-          "iri": "https://w3id.org/riskman/ontology#ImplementationManifest",
-          "description": "A concrete piece of objective evidence (or a reference to such) that an SDA has been implemented, e.g. reference to a line of code or a particular section in the device manual.",
-          "rangeOf": ["has implementation manifest"]
+          "title": "GitHub Contributor Reference",
+          "iri": "https://semrepo.com/class/contributorReference",
+          "description": ""
         },
         {
-          "title": "Controlled Risk",
-          "iri": "https://w3id.org/riskman/ontology#ControlledRisk",
-          "description": "Structured artifact that relates one analyzed risk with one or more SDA(s) and specifies a resulting residual risk.",
-          "subclassOf": [
-            "(is mitigated by some Thing) and (has analyzed risk some Thing) and (has residual risk level some Thing)"
-          ],
-          "domainOf": ["has analyzed risk", "has residual risk level", "is mitigated by"]
+          "title": "GitHub Issue Label Reference",
+          "iri": "https://semrepo.com/class/IssueLabelReference",
+          "description": ""
         },
         {
-          "title": "Patient Problem",
-          "iri": "https://w3id.org/riskman/ontology#PatientProblem",
-          "description": "Information allowing to link an Analyzed Risk to risk reports' notion of a patient problem, e.g. an IMDRF term.",
-          "rangeOf": ["has patient problem"]
+          "title": "GitHub Repository Language Reference",
+          "iri": "https://semrepo.com/class/IssueLabelReference",
+          "description": ""
         },
         {
-          "title": "Probability",
-          "iri": "https://w3id.org/riskman/ontology#Probability",
-          "description": "Probability of occurrence of a harm.",
-          "rangeOf": ["has Probability", "has Probability1", "has Probability2"]
-        },
-        {
-          "title": "Risk",
-          "iri": "https://w3id.org/riskman/ontology#Risk",
-          "description": "Combination of the probability of occurrence of harm and the severity of that harm.",
-          "subclassOf": ["(has harm some Thing) and (has risk level some Thing)"],
-          "domainOf": ["has harm", "has risk level"]
-        },
-        {
-          "title": "Risk Level",
-          "iri": "https://w3id.org/riskman/ontology#RiskLevel",
-          "description": "Combination of probability and severity.",
-          "subclassOf": ["(has Probability some Thing) and (has Severity some Thing)"],
-          "domainOf": ["has Probability", "has Probability1", "has Probability2", "has Severity"],
-          "rangeOf": ["has residual risk level", "has initial risk level", "has risk level"]
-        },
-        {
-            "title": "Risk SDA",
-            "iri": "https://w3id.org/riskman/ontology#RiskSDA",
-            "description": "SDA where the purpose is to mitigate an analyzed risk.",
-            "subclassOf": ["SDA"]
-          },
-          {
-            "title": "Risk SDAI",
-            "iri": "https://w3id.org/riskman/ontology#RiskSDAI",
-            "description": "Structured artifact specifying a concrete implementation or realization of a specific Risk SDA.",
-            "superclassOf": ["Risk SDA and SDAI"]
-          },
-          {
-            "title": "SDA",
-            "iri": "https://w3id.org/riskman/ontology#SDA",
-            "description": "Reusable artifact embodying or expressing one possible method or approach to risk control.",
-            "superclassOf": ["Assurance SDA", "Risk SDA"],
-            "domainOf": ["has implementation manifest", "has sub SDA"],
-            "rangeOf": ["has sub SDA", "is mitigated by"]
-          },
-          {
-            "title": "SDAI",
-            "iri": "https://w3id.org/riskman/ontology#SDAI",
-            "description": "Reusable artifact embodying or expressing one possible method or approach to risk control.",
-            "superclassOf": ["SDA and (has implementation manifest some Thing)"]
-          },
-          {
-            "title": "Severity",
-            "iri": "https://w3id.org/riskman/ontology#Severity",
-            "description": "Measure of the possible consequences of a harm.",
-            "rangeOf": ["has Severity"]
-          },
-          {
-            "title": "Safety Assurance",
-            "iri": "https://w3id.org/riskman/ontology#SafetyAssurance",
-            "description": "A credible reference (or list of such) to the state of the art of achieving safety with respect to a certain class of hazards, e.g. referring to an international norm such as ISO 60601.",
-            "rangeOf": ["has safety assurance"]
-          }
+          "title": "GitHub Issues",
+          "iri": "https://semrepo.com/class/issue",
+          "description": ""
+        }
       ],   
     "data2": [
         {
-          "title": "causes harm",
-          "iri": "https://w3id.org/riskman/ontology#causesHarm",
-          "domainOf": ["Domain specific hazard"],
-          "rangeOf": ["Harm"]
+          "title": "hasTopic",
+          "iri": "https://semrepo.com/property/hastopic",
+          "domainOf": ["Repository"],
+          "rangeOf": ["Repository Topic"],
+          "description": ""
         },
         {
-          "title": "has analyzed risk",
-          "iri": "https://w3id.org/riskman/ontology#hasAnalyzedRisk",
-          "domainOf": ["Controlled risk"],
-          "rangeOf": ["Analyzed risk"]
+          "title": "hasLanguageReference",
+          "iri": "https://semrepo.com/property/haslanguagereference",
+          "domainOf": ["Repository"],
+          "rangeOf": ["GitHub Issue Label Reference"],
+          "description": ""
         },
         {
-          "title": "has device context",
-          "iri": "https://w3id.org/riskman/ontology#hasDeviceContext",
-          "domainOf": ["Analyzed risk"],
-          "rangeOf": ["Device context"]
+          "title": "hasPrimaryProgrammingLanguage",
+          "iri": "https://semrepo.com/property/hasprimaryprogramminglanguage",
+          "domainOf": ["Repository"],
+          "rangeOf": ["GitHub Repository Language Reference"],
+          "description": ""
         },
         {
-          "title": "has device component",
-          "iri": "https://w3id.org/riskman/ontology#hasDeviceComponent",
-          "domainOf": ["Domain specific hazard"],
-          "rangeOf": ["Device component"]
+          "title": "hasPersonType",
+          "iri": "https://semrepo.com/property/haspersontype",
+          "domainOf": ["person"],
+          "rangeOf": ["Stargazer", "Watcher", "Issue Author", "Forker", "Author"],
+          "description": ""
         },
         {
-          "title": "has device problem",
-          "iri": "https://w3id.org/riskman/ontology#hasDeviceProblem",
-          "domainOf": ["Domain specific hazard"],
-          "rangeOf": ["Device problem"]
+          "title": "hasContributorReference",
+          "iri": "https://semrepo.com/property/hascontributorreference",
+          "domainOf": ["Repository"],
+          "rangeOf": ["GitHub Contributor Reference"],
+          "description": ""
         },
         {
-          "title": "has domain specific hazard",
-          "iri": "https://w3id.org/riskman/ontology#hasDomainSpecificHazard",
-          "domainOf": ["Analyzed risk"],
-          "rangeOf": ["Domain specific hazard"]
+          "title": "hasContributor",
+          "iri": "https://semrepo.com/property/hascontributor",
+          "domainOf": ["GitHub Contributor Reference"],
+          "rangeOf": ["Person"],
+          "description": ""
         },
         {
-          "title": "has event",
-          "iri": "https://w3id.org/riskman/ontology#hasEvent",
-          "domainOf": ["Hazardous situation"],
-          "rangeOf": ["Event"]
+          "title": "hasWatcher",
+          "iri": "https://semrepo.com/property/haswatcher",
+          "domainOf": ["Repository"],
+          "rangeOf": ["Person"],
+          "description": ""
         },
         {
-          "title": "has device function",
-          "iri": "https://w3id.org/riskman/ontology#hasDeviceFunction",
-          "domainOf": ["Domain specific hazard"],
-          "rangeOf": ["Device function"]
+          "title": "hasStargazer",
+          "iri": "https://semrepo.com/property/hasstargazer",
+          "domainOf": ["Repository"],
+          "rangeOf": ["Person"],
+          "description": ""
         },
         {
-          "title": "has harm",
-          "iri": "https://w3id.org/riskman/ontology#hasHarm",
-          "domainOf": ["Risk"],
-          "rangeOf": ["Harm"]
+          "title": "hasIssue",
+          "iri": "https://semrepo.com/property/hasissue",
+          "domainOf": ["Repository"],
+          "rangeOf": ["GitHub Issues"],
+          "description": ""
         },
         {
-          "title": "has hazard",
-          "iri": "https://w3id.org/riskman/ontology#hasHazard",
-          "domainOf": ["Domain specific hazard"],
-          "rangeOf": ["Hazard"]
+          "title": "hasIssueLabelReference",
+          "iri": "https://semrepo.com/property/hasissuelabelreference",
+          "domainOf": ["GitHub Issues"],
+          "rangeOf": ["GitHub Issue Label Reference"],
+          "description": ""
         },
         {
-          "title": "has hazardous situation",
-          "iri": "https://w3id.org/riskman/ontology#hasHazardousSituation",
-          "domainOf": ["Analyzed risk"],
-          "rangeOf": ["Hazardous situation"]
+          "title": "hasIssueAuthor",
+          "iri": "https://semrepo.com/property/hasissueauthor",
+          "domainOf": ["GitHub Issues"],
+          "rangeOf": ["Person", "GitHub Bot"],
+          "description": ""
         },
         {
-          "title": "has implementation manifest",
-          "iri": "https://w3id.org/riskman/ontology#hasImplementationManifest",
-          "domainOf": ["SDA"],
-          "rangeOf": ["Implementation manifest"]
+          "title": "hasBotType",
+          "iri": "https://semrepo.com/property/hasbottype",
+          "domainOf": ["GitHub Bot"],
+          "rangeOf": ["Issue Author"],
+          "description": ""
         },
         {
-          "title": "has patient problem",
-          "iri": "https://w3id.org/riskman/ontology#hasPatientProblem",
-          "domainOf": ["Analyzed risk"],
-          "rangeOf": ["Patient problem"]
+          "title": "forkedAs",
+          "iri": "https://semrepo.com/property/forkedas",
+          "domainOf": ["Repository"],
+          "rangeOf": ["Forked Repository"],
+          "description": ""
         },
         {
-          "title": "has parent hazard",
-          "iri": "https://w3id.org/riskman/ontology#hasParentHazard",
-          "domainOf": ["Hazard"],
-          "rangeOf": ["Hazard"]
-        },
-        {
-          "title": "has parent situation",
-          "iri": "https://w3id.org/riskman/ontology#hasParentSituation",
-          "domainOf": ["Hazardous situation"],
-          "rangeOf": ["Hazardous situation"]
-        },
-        {
-          "title": "has residual risk level",
-          "iri": "https://w3id.org/riskman/ontology#hasResidualRiskLevel",
-          "subclassOf": ["has risk level"],
-          "domainOf": ["Controlled risk"],
-          "rangeOf": ["Risk level"]
-        },
-        {
-          "title": "has initial risk level",
-          "iri": "https://w3id.org/riskman/ontology#hasInitialRiskLevel",
-          "subclassOf": ["has risk level"],
-          "domainOf": ["Analyzed risk"],
-          "rangeOf": ["Risk level"]
-        },
-        {
-          "title": "has risk level",
-          "iri": "https://w3id.org/riskman/ontology#hasRiskLevel",
-          "subclassOf": ["has residual risk level", "has initial risk level"],
-          "domainOf": ["Risk"],
-          "rangeOf": ["Risk level"]
-        },
-        {
-          "title": "has preceding event",
-          "iri": "https://w3id.org/riskman/ontology#hasPrecedingEvent",
-          "domainOf": ["Event"],
-          "rangeOf": ["Event"]
-        },
-        {
-          "title": "has safety assurance",
-          "iri": "https://w3id.org/riskman/ontology#hasSafetyAssurance",
-          "domainOf": ["Assurance SDA"],
-          "rangeOf": ["Safety assurance"]
-        },
-        {
-          "title": "has sub SDA",
-          "iri": "https://w3id.org/riskman/ontology#hasSubSDA",
-          "domainOf": ["SDA"],
-          "rangeOf": ["SDA"]
-        },
-        {
-          "title": "is mitigated by",
-          "iri": "https://w3id.org/riskman/ontology#isMitigatedBy",
-          "domainOf": ["Controlled risk"],
-          "rangeOf": ["SDA"]
-        },
-        {
-          "title": "is part of device component",
-          "iri": "https://w3id.org/riskman/ontology#isPartOfDeviceComponent",
-          "domainOf": ["Device component"],
-          "rangeOf": ["Device component"]
-        },
-        {
-          "title": "has probability",
-          "iri": "https://w3id.org/riskman/ontology#hasProbability",
-          "description": "Probability of occurrence of harm, can additionally be expressed as a combination of separate probabilities via respective object properties hasProbability1 and hasProbability2. A decomposition into P1 and P2 is not mandatory.",
-          "domainOf": ["Risk level"],
-          "rangeOf": ["Probability"]
-        },
-        {
-          "title": "has probability1",
-          "iri": "https://w3id.org/riskman/ontology#hasProbability1",
-          "description": "Probability of a hazardous situation occurring.",
-          "domainOf": ["Risk level"],
-          "rangeOf": ["Probability"]
-        },
-        {
-          "title": "has probability2",
-          "iri": "https://w3id.org/riskman/ontology#hasProbability2",
-          "description": "Probability of a hazardous situation leading to harm.",
-          "domainOf": ["Risk level"],
-          "rangeOf": ["Probability"]
-        },
-        {
-          "title": "has severity",
-          "iri": "https://w3id.org/riskman/ontology#hasSeverity",
-          "description": "Measure of the possible consequences of a hazard.",
-          "domainOf": ["Risk level"],
-          "rangeOf": ["Severity"]
+          "title": "forkedBy",
+          "iri": "https://semrepo.com/property/forkedby",
+          "domainOf": ["Forked Repository"],
+          "rangeOf": ["Person"],
+          "description": ""
         }
       ],
-      
     "data3" : [
         {
-          "title": "Security hazard",
-          "iri": "https://w3id.org/riskman/ontology/security#SecurityHazard",
-          "description": "A security-related hazard: one of availability, confidentiality, or integrity",
-          "subclassOf": ["Hazard"]
+          "title": "dcterms:title",
+          "iri": "http://purl.org/dc/terms/title",
+          "domainOf": [""],
+          "rangeOf": [""]
         },
         {
-          "title": "Analyzed security risk",
-          "iri": "https://w3id.org/riskman/ontology/security#AnalyzedSecurityRisk",
-          "description": "A security-related analyzed risk: an analyzed risk having a domain-specific hazard with a security hazard",
-          "subclassOf": ["AnalyzedRisk"],
-          "superclassOf": [
-            "AnalyzedRisk and (hasDomainSpecificHazard some (hasHazard some Security hazard))"
-          ]
+          "title": "fabio:hasUrl",
+          "iri": "http://purl.org/spar/fabio/hasURL",
+          "domainOf": ["person", "Repository", "GitHub Issues", "Forked Repository", "GitHub Organization"],
+          "rangeOf": ["anyURI"]
         },
         {
-          "title": "Controlled security risk",
-          "iri": "https://w3id.org/riskman/ontology/security#ControlledSecurityRisk",
-          "description": "A security-related controlled risk: a controlled risk having an analyzed security risk",
-          "subclassOf": ["ControlledRisk"],
-          "superclassOf": [
-            "ControlledRisk and (hasAnalyzedRisk some Analyzed security risk)"
-          ]
+          "title": "dcterms:abstract",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
         },
         {
-          "title": "Justification",
-          "iri": "https://w3id.org/riskman/ontology/security#Justification",
-          "description": "Further justification associated to a risk level",
-          "rangeOf": [
-            "has initial risk level justification",
-            "has residual risk level justification"
-          ]
+          "title": "hasLanguageName",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
         },
         {
-          "title": "Risk level needing justification",
-          "iri": "https://w3id.org/riskman/ontology/security#RiskLevelNeedingJustification",
-          "description": "A risk level that needs further justification",
-          "subclassOf": ["RiskLevel"]
+          "title": "hasLanguageUsage",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "foaf:accountName",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasCommits",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "issueState",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "dcterms:created",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalCommits",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasIssueLabelDescription",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasIssueLabelName",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasReadMe",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalOpenIssues",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalForks",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalStargazers",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalWatchers",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalContributor",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalIssues",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalClosedIssues",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "foaf:name",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasLocation",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasBlog",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "foaf:mbox",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "foaf:description",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTwitterAccount",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasFollowers",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasPublicRepo",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
         }
-      ],
-    "data4": [
-        {
-            "title": "has initial risk level justification",
-            "iri": "https://w3id.org/riskman/ontology/security#hasInitialRiskLevelJustification",
-            "domainOf": ["AnalyzedRisk"],
-            "rangeOf": ["Justification"]
-        },
-        {
-            "title": "has residual risk level justification",
-            "iri": "https://w3id.org/riskman/ontology/security#hasResidualRiskLevelJustification",
-            "domainOf": ["ControlledRisk"],
-            "rangeOf": ["Justification"]
-        }
-    ],
-    "data5": [
-        {
-            "title": "Availability",
-            "iri": "https://w3id.org/riskman/ontology/security#Availability",
-            "classs": "Security hazard"
-        },
-        {
-            "title": "Confidentiality",
-            "iri": "https://w3id.org/riskman/ontology/security#Confidentiality",
-            "classs": "Security hazard"
-        },
-        {
-            "title": "Integrity",
-            "iri": "https://w3id.org/riskman/ontology/security#Integrity",
-            "classs": "Security hazard"
-        }
-    ]
+        
+      ]
 }

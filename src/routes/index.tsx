@@ -2,8 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import OntologyDataset from "../components/OntologyDataset";
-import GitGraphDataset from "../components/GitGraphDataset";
-
 export const Route = createFileRoute("/")({
   component: Index,
 });
@@ -19,12 +17,6 @@ function Index() {
           <section className="border border-border-primary p-4 mt-12">
             <OntologyDataset />
           </section>
-
-          {/* Git Graph Data Section */}
-          <section className="border border-border-primary p-4 mt-12">
-            <GitGraphDataset />
-          </section>
-
           <Footer />
         </div>
       </div>

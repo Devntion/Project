@@ -18,19 +18,19 @@ const GitGraphDataset: React.FC = () => {
   const [additionalData3, setAdditionalData3] = useState<OntologyData[]>([]);
 
   useEffect(() => {
-    // Fetch data2.json
+    // Fetch data.json
     fetch("/data2.json")
       .then((response) => {
-        console.log("data2.json response status:", response.status);
+        console.log("data.json response status:", response.status);
         return response.json();
       })
       .then((data) => {
-        console.log("data2.json loaded:", data);
+        console.log("data.json loaded:", data);
         setAdditionalData1(data.data1 || []);
         setAdditionalData2(data.data2 || []);
         setAdditionalData3(data.data3 || []);
       })
-      .catch(error => console.error("Error fetching data2.json:", error));
+      .catch(error => console.error("Error fetching data.json:", error));
   }, []);
 
   return (
