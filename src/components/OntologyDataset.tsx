@@ -8,8 +8,10 @@ type Entity = {
     section: 'main';
 };
 
+// @ts-ignore
 type Metadata = {
     title: string;
+    subtitle: string;
     description: string;
     abstract?: string;
     links: {

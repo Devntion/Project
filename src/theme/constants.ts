@@ -1,6 +1,6 @@
 export const theme = {
   colors: {
-    primary: '#545151',    // Green color used for links and highlights
+    primary: 'rgba(154,152,152,0.97)',    // Green color used for links and highlights
     background: '#030303', // Dark background
     text: {
       primary: '#19b4ce', // Semi-transparent white for main text
