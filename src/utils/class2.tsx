@@ -58,7 +58,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
                 <ul className="list-disc list-inside ml-4">
                   <a key={classs}
                     href={`#${classs.toLowerCase().replace(/\s+/g, "-")}`}>
-                    <li key={classs} className="text-primary">{classs}</li>
+                    <li key={classs} className="text-primary hover:underline">{classs}</li>
                   </a>
                 </ul>
               </p>
@@ -73,7 +73,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
                 {subclassOf.map((item, index) => (
                   <a key={item}
                   href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                  <li key={index} className="text-primary">{item}</li>
+                  <li key={index} className="text-primary hover:underline">{item}</li>
                   </a>
                 ))}
               </ul>
@@ -89,7 +89,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
                 {superclassOf.map((item, index) => (
                   <a key={item}
                   href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                  <li key={index} className="text-primary">{item}</li>
+                  <li key={index} className="text-primary hover:underline">{item}</li>
                   </a>
                 ))}
               </ul>
@@ -105,7 +105,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
                 {domainOf.map((item, index) => (
                   <a key={item}
                   href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                  <li key={index} className="text-primary">{item}</li>
+                  <li key={index} className="text-primary hover:underline">{item}</li>
                   </a>
                 ))}
               </ul>
@@ -121,7 +121,7 @@ const ClassCard2: React.FC<ClassCardProps> = ({
                 {rangeOf.map((item, index) => (
                   <a key={item}
                   href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>
-                  <li key={index} className="text-primary">{item}</li>
+                  <li key={index} className="text-primary hover:underline">{item}</li>
                   </a>
                 ))}
               </ul>
