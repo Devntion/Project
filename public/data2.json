@@ -1,0 +1,356 @@
+{
+    "data1": [
+        {
+          "title": "Repository",
+          "iri": "https://semrepo.com/class/repository",
+          "description": ""
+        },
+        {
+          "title": "Person",
+          "iri": "https://semrepo.com/class/person",
+          "description": ""
+        },
+        {
+          "title": "Author",
+          "iri": "https://semrepo.com/class/author",
+          "description": "",
+          "subclassOf": ["Person"]
+        },
+        {
+          "title": "Stargazer",
+          "iri": "https://semrepo.com/class/stargazer",
+          "description": "",
+          "subclassOf": ["Person"]
+        },
+        {
+          "title": "Watcher",
+          "iri": "https://semrepo.com/class/watcher",
+          "description": "",
+          "subclassOf": ["Person"]
+        },
+        {
+          "title": "Issue Author",
+          "iri": "https://semrepo.com/class/issueAuthor",
+          "description": "",
+          "subclassOf": ["Person"]
+        },
+        {
+          "title": "Forker",
+          "iri": "https://semrepo.com/class/forker",
+          "description": "",
+          "subclassOf": ["Person"]
+        },
+        {
+          "title": "Forked Repository",
+          "iri": "https://semrepo.com/class/forkedRepo",
+          "description": ""
+        },
+        {
+          "title": "Repository Topic",
+          "iri": "https://semrepo.com/class/topic",
+          "description": ""
+        },
+        {
+          "title": "GitHub Bot",
+          "iri": "https://semrepo.com/class/bot",
+          "description": ""
+        },
+        {
+          "title": "GitHub Organization",
+          "iri": "https://semrepo.com/class/organization",
+          "description": ""
+        },
+        {
+          "title": "GitHub Contributor Reference",
+          "iri": "https://semrepo.com/class/contributorReference",
+          "description": ""
+        },
+        {
+          "title": "GitHub Issue Label Reference",
+          "iri": "https://semrepo.com/class/IssueLabelReference",
+          "description": ""
+        },
+        {
+          "title": "GitHub Repository Language Reference",
+          "iri": "https://semrepo.com/class/IssueLabelReference",
+          "description": ""
+        },
+        {
+          "title": "GitHub Issues",
+          "iri": "https://semrepo.com/class/issue",
+          "description": ""
+        }
+      ],   
+    "data2": [
+        {
+          "title": "hasTopic",
+          "iri": "https://semrepo.com/property/hastopic",
+          "domainOf": ["Repository"],
+          "rangeOf": ["Repository Topic"],
+          "description": ""
+        },
+        {
+          "title": "hasLanguageReference",
+          "iri": "https://semrepo.com/property/haslanguagereference",
+          "domainOf": ["Repository"],
+          "rangeOf": ["GitHub Issue Label Reference"],
+          "description": ""
+        },
+        {
+          "title": "hasPrimaryProgrammingLanguage",
+          "iri": "https://semrepo.com/property/hasprimaryprogramminglanguage",
+          "domainOf": ["Repository"],
+          "rangeOf": ["GitHub Repository Language Reference"],
+          "description": ""
+        },
+        {
+          "title": "hasPersonType",
+          "iri": "https://semrepo.com/property/haspersontype",
+          "domainOf": ["person"],
+          "rangeOf": ["Stargazer", "Watcher", "Issue Author", "Forker", "Author"],
+          "description": ""
+        },
+        {
+          "title": "hasContributorReference",
+          "iri": "https://semrepo.com/property/hascontributorreference",
+          "domainOf": ["Repository"],
+          "rangeOf": ["GitHub Contributor Reference"],
+          "description": ""
+        },
+        {
+          "title": "hasContributor",
+          "iri": "https://semrepo.com/property/hascontributor",
+          "domainOf": ["GitHub Contributor Reference"],
+          "rangeOf": ["Person"],
+          "description": ""
+        },
+        {
+          "title": "hasWatcher",
+          "iri": "https://semrepo.com/property/haswatcher",
+          "domainOf": ["Repository"],
+          "rangeOf": ["Person"],
+          "description": ""
+        },
+        {
+          "title": "hasStargazer",
+          "iri": "https://semrepo.com/property/hasstargazer",
+          "domainOf": ["Repository"],
+          "rangeOf": ["Person"],
+          "description": ""
+        },
+        {
+          "title": "hasIssue",
+          "iri": "https://semrepo.com/property/hasissue",
+          "domainOf": ["Repository"],
+          "rangeOf": ["GitHub Issues"],
+          "description": ""
+        },
+        {
+          "title": "hasIssueLabelReference",
+          "iri": "https://semrepo.com/property/hasissuelabelreference",
+          "domainOf": ["GitHub Issues"],
+          "rangeOf": ["GitHub Issue Label Reference"],
+          "description": ""
+        },
+        {
+          "title": "hasIssueAuthor",
+          "iri": "https://semrepo.com/property/hasissueauthor",
+          "domainOf": ["GitHub Issues"],
+          "rangeOf": ["Person", "GitHub Bot"],
+          "description": ""
+        },
+        {
+          "title": "hasBotType",
+          "iri": "https://semrepo.com/property/hasbottype",
+          "domainOf": ["GitHub Bot"],
+          "rangeOf": ["Issue Author"],
+          "description": ""
+        },
+        {
+          "title": "forkedAs",
+          "iri": "https://semrepo.com/property/forkedas",
+          "domainOf": ["Repository"],
+          "rangeOf": ["Forked Repository"],
+          "description": ""
+        },
+        {
+          "title": "forkedBy",
+          "iri": "https://semrepo.com/property/forkedby",
+          "domainOf": ["Forked Repository"],
+          "rangeOf": ["Person"],
+          "description": ""
+        }
+      ],
+      
+    "data3" : [
+        {
+          "title": "dcterms:title",
+          "iri": "http://purl.org/dc/terms/title",
+          "domainOf": [""],
+          "rangeOf": [""]
+        },
+        {
+          "title": "fabio:hasUrl",
+          "iri": "http://purl.org/spar/fabio/hasURL",
+          "domainOf": ["person", "Repository", "GitHub Issues", "Forked Repository", "GitHub Organization"],
+          "rangeOf": ["anyURI"]
+        },
+        {
+          "title": "dcterms:abstract",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasLanguageName",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasLanguageUsage",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "foaf:accountName",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasCommits",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "issueState",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "dcterms:created",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalCommits",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasIssueLabelDescription",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasIssueLabelName",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasReadMe",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalOpenIssues",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalForks",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalStargazers",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalWatchers",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalContributor",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalIssues",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTotalClosedIssues",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "foaf:name",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasLocation",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasBlog",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "foaf:mbox",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "foaf:description",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasTwitterAccount",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasFollowers",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        },
+        {
+          "title": "hasPublicRepo",
+          "iri": "",
+          "domainOf": [],
+          "rangeOf": []
+        }
+        
+      ]
+}

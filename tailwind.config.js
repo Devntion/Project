@@ -12,6 +12,11 @@ export default {
         primary: themeConstants.colors.primary,
         background: themeConstants.colors.background,
         'text-primary': themeConstants.colors.text.primary,
+        border: {
+          primary: themeConstants.colors.border.primary,
+          dashed: themeConstants.colors.border.dashed,
+          separator: themeConstants.colors.border.separator
+        }
       }
     },
   },

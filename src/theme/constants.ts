@@ -4,6 +4,11 @@ export const theme = {
     background: '#181818', // Dark background
     text: {
       primary: '#EBEBEBA3', // Semi-transparent white for main text
+    },
+    border: {
+      primary: '#FFFFFF',   // White color for borders
+      dashed: '#FFFFFF',    // White color for dashed borders
+      separator: '#FFFFFF'  // White color for line breaks
     }
   }
 } as const;
