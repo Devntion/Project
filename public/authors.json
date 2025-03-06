@@ -3,42 +3,20 @@
     {
       "name": "Dörthe Arndt",
       "affiliation": "ICCL, TU Dresden",
-      "role": "creator"
+      "role": "creator",
+      "link": "https://www.linkedin.com/in/doerthe-arndt-1b1b1b1b/"
     },
     {
       "name": "Martin Diller",
       "affiliation": "ICCL, TU Dresden",
-      "role": "creator"
+      "role": "creator",
+      "link": "https://www.linkedin.com/in/martin-diller-1b1b1b1b/"
     },
     {
       "name": "Piotr Gorczyca",
       "affiliation": "ICCL, TU Dresden",
-      "role": "creator"
-    },
-    {
-      "name": "Pascal Kettmann",
-      "affiliation": "ICCL, TU Dresden",
-      "role": "creator"
-    },
-    {
-      "name": "Stephan Mennicke",
-      "affiliation": "ICCL, TU Dresden",
-      "role": "creator"
-    },
-    {
-      "name": "Hannes Straß",
-      "affiliation": "ICCL, TU Dresden",
-      "role": "creator"
-    },
-    {
-      "name": "Evi Hartig",
-      "affiliation": "EKFZ, TU Dresden",
-      "role": "contributor"
-    },
-    {
-      "name": "Sarah Tsurkan",
-      "affiliation": "EKFZ, TU Dresden",
-      "role": "contributor"
+      "role": "creator",
+      "link": "https://www.linkedin.com/in/piotr-gorczyca-1b1b1b1b/"
     }
   ]
 } 
