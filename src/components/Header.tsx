@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import TopImage from "/logo.svg";
-import { Link } from '@tanstack/react-router';
+import { Link, useRouter } from '@tanstack/react-router';
 
 type Author = {
     name: string;
@@ -31,6 +31,8 @@ type Metadata = {
 const Header: React.FC = () => {
     const [authors, setAuthors] = useState<Author[]>([]);
     const [mainMetadata, setMainMetadata] = useState<Metadata | null>(null);
+    const router = useRouter();
+    const isVisualizationPage = router.state.location.pathname === '/visualization';
 
     useEffect(() => {
         // Fetch authors data
@@ -87,17 +89,19 @@ const Header: React.FC = () => {
                     <p className="mt-2 text-text-primary">
                         {mainMetadata.subtitle}
                     </p>
-                    <Link 
-                        to="/visualization" 
-                        className="inline-block mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition-colors"
-                    >
-                        <span className="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                            Visualize Data
-                        </span>
-                    </Link>
+                    {!isVisualizationPage && (
+                        <Link 
+                            to="/visualization" 
+                            className="inline-block mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition-colors"
+                        >
+                            <span className="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                </svg>
+                                Visualize Data
+                            </span>
+                        </Link>
+                    )}
                 </div>
             </header>
 
