@@ -612,7 +612,7 @@ function generateBarChart(data, xColumn, yColumn) {
         .attr("text-anchor", verticalBars ? "middle" : "start")
         .attr("alignment-baseline", "middle")
         .style("font-size", "12px")
-        .style("fill", "#000")
+        .style("fill", "#fffcfc")
         .text(d => d[xColumn]);
 
 
