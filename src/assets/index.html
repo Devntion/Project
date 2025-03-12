@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CSV Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-3.0.0.min.js" charset="utf-8"></script>
+</head>
+<body>
+<h2>CSV Visualization</h2>
+<input type="file" id="csvFile" accept=".csv" onchange="handleFile()"/>
+
+<!-- Axis Selectors -->
+<div>
+    <label for="xColumn">X-Axis:</label>
+    <select id="xColumn"></select>
+
+    <label for="yColumn">Y-Axis:</label>
+    <select id="yColumn"></select>
+
+    <label for="zColumn">Z-Axis:</label>
+    <select id="zColumn"></select>
+
+    <label for="colorColumn">Color:</label>
+    <select id="colorColumn"></select>
+
+    <!-- Dropdown for chart type -->
+    <label for="chartType">Chart Type:</label>
+    <select id="chartType">
+        <option value="parallel">Parallel Coordinates</option>
+        <option value="bar">Bar Chart</option>
+        <option value="scatter2D">2D Scatter</option>
+        <option value="scatter3D">3D Scatter</option>
+        <option value="heatmap">Heatmap</option>
+    </select>
+
+    <label for="groupByColumn">Group By:</label>
+    <select id="groupByColumn">
+        <option value="">None</option>
+        <option value="Name">Name</option>
+        <option value="Category">Category</option>
+    </select>
+
+    <label for="aggregationType">Aggregation:</label>
+    <select id="aggregationType">
+        <option value="sum">Sum</option>
+        <option value="average">Average</option>
+        <option value="count">Count</option>
+    </select>
+
+
+    <button onclick="visualize()">Visualize</button>
+</div>
+
+
+<button id="exportBtn" style="margin: 10px;">Export as SVG</button>
+<button id="exportPDFBtn">Export PDF</button>
+
+<!-- Chart container -->
+<div id="chart" style="width: 100%; height: 600px;"></div>
+
+<script src="js/visualize.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+</html>
