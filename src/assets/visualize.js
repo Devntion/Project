@@ -569,12 +569,14 @@ function generateBarChart(data, xColumn, yColumn) {
         )
         .selectAll("text")
         .style("text-anchor", verticalBars ? "end" : "middle")
+        .style("font-size", "12px")
         .attr("transform", verticalBars ? "rotate(-15)" : null);
 
     // ✅ Improved Dynamic Wrapping for Y-Axis Labels
     const yAxis = svg.append("g")
         .attr("transform", `translate(${margin.left},0)`)
-        .call(d3.axisLeft(yScale));
+        .call(d3.axisLeft(yScale))
+        .style("font-size", "12px");
 
     yAxis.selectAll("text").each(function (d) {
         const text = d3.select(this);
@@ -598,6 +600,21 @@ function generateBarChart(data, xColumn, yColumn) {
             }
         }
     });
+
+
+    svg.selectAll(".bar-label")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr("class", "bar-label")
+        .attr("x", d => verticalBars ? xScale(d[xColumn]) + xScale.bandwidth() / 2 : xScale(d[xColumn]) + 5)
+        .attr("y", d => verticalBars ? yScale(d[yColumn]) - 5 : yScale(d[yColumn]) + yScale.bandwidth() / 2)
+        .attr("text-anchor", verticalBars ? "middle" : "start")
+        .attr("alignment-baseline", "middle")
+        .style("font-size", "12px")
+        .style("fill", "#000")
+        .text(d => d[xColumn]);
+
 
     // Tooltip
     const tooltip = d3.select("body").append("div")
